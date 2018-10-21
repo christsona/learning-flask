@@ -1,5 +1,8 @@
+from People import *
 from app import *
-from flask import render_template
+# from config import *
+
 @app.route("/")
 def index():
-    return render_template('home.html')
+    person = People.get(ID=1)
+    return render_template('home.html', user=person)
